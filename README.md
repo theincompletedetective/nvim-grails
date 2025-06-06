@@ -28,10 +28,16 @@ return {
   requires = {
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim'  -- For some utility functions
-  },
-  opts = function()
+  }
+}
+```
+
+## Configuration
+
+```lua
+require("nvim-grails").setup({
     lsp = {
       cmd = { 'java', '-jar', '/path/to/groovy-language-server-all.jar' }
     }
-  end
-}
+})
+```
