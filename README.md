@@ -6,7 +6,7 @@ A Neovim plugin for working with Grails: A powerful, Groovy-based web applicatio
 
 - Neovim 0.11+
 - Java 11+
-- [Grails 5+](https://grails.org/)
+- [Grails 5.0.0+](https://grails.org/)
 - [Groovy Language Server](https://github.com/GroovyLanguageServer/groovy-language-server)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
@@ -14,4 +14,4 @@ A Neovim plugin for working with Grails: A powerful, Groovy-based web applicatio
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
-return {'nvim-java/nvim-java'}
+return {'theincompletedetective/nvim-grails'}
