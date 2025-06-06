@@ -2,6 +2,15 @@
 
 A Neovim plugin for working with Grails: A powerful, Groovy-based web application framework for the JVM, built on top of Spring Boot.
 
+## Features
+
+- Full LSP support for Grails projects
+- GSP file syntax highlighting and formatting
+- Grails command integration
+- Project detection and configuration
+- Code generation scaffolding
+- Custom templates support
+
 ## Requirements
 
 - Neovim 0.11+
@@ -14,4 +23,15 @@ A Neovim plugin for working with Grails: A powerful, Groovy-based web applicatio
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
-return {'theincompletedetective/nvim-grails'}
+return {
+  'theincompletedetective/nvim-grails',
+  requires = {
+    'neovim/nvim-lspconfig',
+    'nvim-lua/plenary.nvim'  -- For some utility functions
+  },
+  opts = function()
+    lsp = {
+      cmd = { 'java', '-jar', '/path/to/groovy-language-server-all.jar' }
+    }
+  end
+}

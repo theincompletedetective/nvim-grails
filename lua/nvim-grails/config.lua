@@ -5,21 +5,38 @@ local default_config = {
 		cmd = { "java", "-jar", "groovy-language-server-all.jar" },
 		filetypes = { "groovy", "gsp" },
 		root_dir = function(fname)
-			-- Look for Grails project markers
 			local util = require("lspconfig.util")
-			return util.root_pattern("build.gradle", "grails-app", "gradle.properties")(fname)
+			return util.root_pattern("build.gradle", "grails-app", "gradle.properties", "settings.gradle")(fname)
 		end,
 		settings = {
 			groovy = {
 				classpath = {},
 				gradle = {
 					enabled = true,
+					wrapper = { enabled = true },
 				},
 				grails = {
 					enabled = true,
+					autoDetect = true,
+				},
+				imports = {
+					aliases = {
+						["grails.gorm"] = "org.grails.datastore.gorm",
+						["grails.web"] = "org.grails.web",
+					},
 				},
 			},
 		},
+	},
+	gsp = {
+		enable_syntax = true,
+		enable_ftplugin = true,
+	},
+	commands = {
+		grails_executable = "./gradlew grails-run-command --args=",
+	},
+	scaffold = {
+		templates_dir = vim.fn.stdpath("config") .. "/grails-templates",
 	},
 }
 
