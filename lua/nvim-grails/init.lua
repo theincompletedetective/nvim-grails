@@ -1,6 +1,8 @@
 local M = {}
 
 function M.setup(opts)
+	vim.lsp.enable("groovyls")
+
 	local config = require("nvim-grails.config")
 	config.setup(opts or {})
 
