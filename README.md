@@ -1,6 +1,7 @@
 # nvim-grails
 
 A Neovim plugin for working with Grails: A powerful, Groovy-based web application framework for the JVM, built on top of Spring Boot.
+This plugin is a work in progress, until an official release is made.
 
 ## Features
 
