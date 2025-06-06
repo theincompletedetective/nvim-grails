@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-	local config = require("grails-nvim.config").config
+	local config = require("nvim-grails.config").config
 
 	-- Detect Grails projects and set project-specific settings
 	vim.api.nvim_create_autocmd("BufEnter", {
