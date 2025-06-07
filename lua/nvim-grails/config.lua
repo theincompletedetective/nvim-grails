@@ -7,8 +7,7 @@ local default_config = {
     cmd = {
       "java",
       "-jar",
-      home
-      .. "/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar",
+      home .. "/.local/share/groovy/groovy-language-server-all.jar",
     },
     filetypes = { "groovy", "gsp" },
     root_dir = function(fname)
