@@ -4,11 +4,11 @@ local home = vim.fn.expand("~")
 
 local default_config = {
   lsp = {
-    cmd = {
-      "java",
-      "-jar",
-      home .. "/.local/share/groovy/groovy-language-server-all.jar",
-    },
+    -- cmd = {
+    --   "java",
+    --   "-jar",
+    --   home .. "/.local/share/groovy/groovy-language-server-all.jar",
+    -- },
     filetypes = { "groovy", "gsp" },
     root_dir = function(fname)
       local util = require("lspconfig.util")
