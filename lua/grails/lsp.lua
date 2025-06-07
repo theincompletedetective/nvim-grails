@@ -26,15 +26,17 @@ function M.setup()
 
   local home = vim.fn.expand("~")
 
-  lspconfig.groovyls.setup({
+  vim.lsp.config("groovyls", {
     cmd = { home .. "/.local/share/nvim/mason/bin/groovy-language-server" },
     root_dir = lspconfig.util.root_pattern("grails-app"),
-    filetypes = { "groovy" },
+    filetypes = { "groovy", "gsp" },
     settings = {},
     on_attach = function(client, bufnr)
       -- Optional: buffer local mappings or diagnostic config
     end,
   })
+
+  vim.lsp.enable("groovyls")
 end
 
 return M
