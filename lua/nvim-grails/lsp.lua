@@ -12,7 +12,7 @@ function M.setup()
   end
 
   -- Setup Groovy LSP
-  lspconfig.groovyls.setup(config.lsp)
+  vim.lsp.config("groovyls", config.lsp)
 
   -- Additional Grails-specific setup
   vim.api.nvim_create_autocmd("FileType", {
