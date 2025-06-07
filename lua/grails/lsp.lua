@@ -24,13 +24,11 @@ function M.setup()
     return
   end
 
-  local groovy_ls = mason_registry.get_package("groovy-language-server")
-  local lsp_path = groovy_ls:get_install_path()
-      .. "/server/build/install/groovy-language-server/bin/groovy-language-server"
+  local home = vim.fn.expand("~")
 
   lspconfig.groovyls.setup({
-    cmd = { lsp_path },
-    root_dir = lspconfig.util.root_pattern("grails-app", ".git"),
+    cmd = { home .. "/.local/share/nvim/mason/bin/groovy-language-server" },
+    root_dir = lspconfig.util.root_pattern("grails-app"),
     filetypes = { "groovy" },
     settings = {},
     on_attach = function(client, bufnr)
