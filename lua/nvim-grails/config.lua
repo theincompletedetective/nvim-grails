@@ -2,7 +2,11 @@ local M = {}
 
 local default_config = {
 	lsp = {
-		cmd = { "java", "-jar", "groovy-language-server-all.jar" },
+		cmd = {
+			"java",
+			"-jar",
+			"~/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server.jar",
+		},
 		filetypes = { "groovy", "gsp" },
 		root_dir = function(fname)
 			local util = require("lspconfig.util")
