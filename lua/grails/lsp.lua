@@ -26,6 +26,15 @@ function M.setup()
     return
   end
 
+  lspconfig.groovyls.setup({
+    root_dir = lspconfig.util.root_pattern("grails-app", ".git"),
+    filetypes = { "groovy" },
+    settings = {},
+    on_attach = function(client, bufnr)
+      -- Optional: buffer local mappings or diagnostic config
+    end,
+  })
+
   -- vim.lsp.config("groovyls", {
   --   -- root_dir = lspconfig.util.root_pattern("grails-app"),
   --   filetypes = { "groovy", "gsp" },
