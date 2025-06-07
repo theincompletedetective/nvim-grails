@@ -12,7 +12,7 @@ local default_config = {
     filetypes = { "groovy", "gsp" },
     root_dir = function(fname)
       local util = require("lspconfig.util")
-      return util.root_pattern("build.gradle", "grails-app", "gradle.properties", "settings.gradle")(fname)
+      return util.root_pattern("grails-app", "grailsw")(fname)
     end,
     settings = {
       groovy = {
@@ -27,8 +27,8 @@ local default_config = {
         },
         imports = {
           aliases = {
-            ["grails.gorm"] = "org.grails.datastore.gorm",
             ["grails.web"] = "org.grails.web",
+            ["grails.gorm"] = "org.grails.datastore.gorm",
           },
         },
       },
