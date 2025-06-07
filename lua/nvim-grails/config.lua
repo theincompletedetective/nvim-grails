@@ -4,20 +4,9 @@ local home = vim.fn.expand("~")
 
 local default_config = {
   lsp = {
-    cmd = { "java", "-jar", home .. "/.local/share/nvim/mason/bin/groovy-language-server" },
+    cmd = { "java", "-jar", home .. "/.local/share/groovy/groovy-language-server-all.jar" },
     filetypes = { "groovy", "gsp" },
     root_markers = { "grails-app" },
-    settings = {
-      groovy = {
-        classpath = {},
-        gradle = {
-          enabled = true,
-        },
-        grails = {
-          enabled = true,
-        },
-      },
-    },
   },
 }
 
