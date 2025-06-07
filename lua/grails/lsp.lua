@@ -27,7 +27,7 @@ function M.setup()
   end
 
   vim.lsp.config("groovyls", {
-    root_dir = lspconfig.util.root_pattern("grails-app"),
+    -- root_dir = lspconfig.util.root_pattern("grails-app"),
     filetypes = { "groovy", "gsp" },
     settings = {},
     on_attach = function(client, bufnr)
