@@ -13,7 +13,6 @@ function M.setup()
 
   -- Setup Groovy LSP
   vim.lsp.config("groovyls", config.lsp)
-  vim.lsp.enable("groovyls")
   -- lspconfig.groovyls.setup(config.lsp)
 
   -- Additional Grails-specific setup
