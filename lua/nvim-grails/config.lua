@@ -1,8 +1,10 @@
 local M = {}
 
+local home = vim.fn.expand("~")
+
 local default_config = {
   lsp = {
-    cmd = { "groovy-language-server" },
+    cmd = { "java", "-jar", home .. "/.local/share/nvim/mason/bin/groovy-language-server" },
     filetypes = { "groovy", "gsp" },
     root_markers = { "grails-app" },
     settings = {
