@@ -7,22 +7,11 @@ local default_config = {
     cmd = { "java", "-jar", home .. "/.local/share/groovy/groovy-language-server-all.jar" },
     filetypes = { "groovy", "gsp" },
   },
-  root_dir = function(fname)
+  root_markers = function(fname)
     -- Look for Grails project markers
     local util = require("lspconfig.util")
     return util.root_pattern("grails-app", "grailsw")(fname)
   end,
-  settings = {
-    groovy = {
-      classpath = {},
-      gradle = {
-        enabled = true,
-      },
-      grails = {
-        enabled = true,
-      },
-    },
-  },
 }
 
 function M.setup(opts)
