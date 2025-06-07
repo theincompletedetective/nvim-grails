@@ -4,7 +4,7 @@ function M.setup()
   local config = require("nvim-grails.config").config
 
   -- Check if LSP is available
-  local lsp_available, lspconfig = pcall(require, "lspconfig")
+  local lsp_available, _ = pcall(require, "lspconfig")
 
   if not lsp_available then
     vim.notify("nvim-lspconfig not found", vim.log.levels.ERROR)
