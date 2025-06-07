@@ -2,6 +2,8 @@ local M = {}
 
 function M.setup()
   local config = require("nvim-grails.config").config
+
+  -- Check if LSP is available
   local lsp_available, lspconfig = pcall(require, "lspconfig")
 
   if not lsp_available then
@@ -9,12 +11,15 @@ function M.setup()
     return
   end
 
-  -- Add Grails-specific file patterns
-  vim.filetype.add({
-    pattern = {
-      ["grails-app/views/.*.gsp"] = "gsp",
-      ["grails-app/.*/.*.groovy"] = "groovy",
-    },
+  -- Setup Groovy LSP
+  lspconfig.groovyls.setup(config.lsp)
+
+  -- Additional Grails-specific setup
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "groovy",
+    callback = function()
+      -- You can add Grails-specific keymaps or settings here
+    end,
   })
 end
 
